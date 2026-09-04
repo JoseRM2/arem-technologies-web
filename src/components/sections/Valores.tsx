@@ -55,7 +55,7 @@ export function Valores() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pb-8 md:pb-0 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {valores.map((valor, index) => (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -63,19 +63,19 @@ export function Valores() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               key={index}
-              className="h-full"
+              className="min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center h-full"
             >
               <Card className="bg-white/5 backdrop-blur-md border border-white/10 shadow-none h-full rounded-[2.5rem] hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
-                <CardHeader className="p-8 pb-4">
-                  <div className="mb-6">
+                <CardHeader className="p-6 md:p-8 pb-4">
+                  <div className="mb-4 md:mb-6">
                     <div className="w-12 h-12 rounded-full border border-[#0F62AC]/30 bg-[#0F62AC]/10 flex items-center justify-center text-[#0F62AC]">
                       <valor.icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-sans font-bold text-white">{valor.title}</CardTitle>
+                  <CardTitle className="text-xl md:text-2xl font-sans font-bold text-white">{valor.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="p-8 pt-0 flex-grow">
-                  <p className="text-slate-300 text-base font-sans font-medium leading-relaxed">
+                <CardContent className="p-6 md:p-8 pt-0 flex-grow">
+                  <p className="text-slate-300 text-sm md:text-base font-sans font-medium leading-relaxed">
                     {valor.description}
                   </p>
                 </CardContent>

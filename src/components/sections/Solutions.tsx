@@ -26,13 +26,13 @@ export function Solutions() {
   return (
     <section className="min-h-screen flex items-center justify-center py-20 bg-white" id="soluciones">
       <div className="max-w-7xl mx-auto px-4 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col gap-16 items-center">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="space-y-10"
+            className="space-y-8 max-w-3xl mx-auto text-center"
           >
             <div>
               <div className="text-[12px] tracking-[0.2em] uppercase text-[#0F62AC] font-bold mb-4">Arquitectura a Medida</div>
@@ -41,40 +41,41 @@ export function Solutions() {
             <p className="text-slate-500 text-lg md:text-xl leading-relaxed font-sans font-medium">
               Entendemos que cada organización tiene un nivel de madurez diferente. Diseñamos e implementamos arquitecturas que se adaptan a su realidad.
             </p>
-            <ul className="space-y-5 text-slate-700 font-sans font-semibold text-base md:text-lg">
-              <li className="flex items-center gap-4">
-                <CheckCircle2 className="w-6 h-6 text-[#0F62AC]" />
+            <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-slate-700 font-sans font-semibold text-base md:text-lg">
+              <li className="flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#0F62AC]" />
                 Arquitectura escalable a medida
               </li>
-              <li className="flex items-center gap-4">
-                <CheckCircle2 className="w-6 h-6 text-[#0F62AC]" />
+              <li className="flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#0F62AC]" />
                 Seguridad de grado corporativo
               </li>
-              <li className="flex items-center gap-4">
-                <CheckCircle2 className="w-6 h-6 text-[#0F62AC]" />
-                Mantenimiento y soporte continuo
+              <li className="flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#0F62AC]" />
+                Soporte continuo
               </li>
             </ul>
           </motion.div>
           
-          <div className="grid gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {solutions.map((solution, index) => (
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 key={index}
+                className="h-full"
               >
-                <Card className="bg-slate-50/70 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 rounded-[2rem] p-2">
-                  <CardHeader className="flex flex-row items-center gap-5 p-6 pb-3">
+                <Card className="bg-slate-50/70 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 rounded-[2rem] p-2 h-full flex flex-col">
+                  <CardHeader className="flex flex-col items-start gap-4 p-6 pb-3">
                     <div className="p-3 bg-white rounded-2xl shadow-sm text-[#0F62AC]">
                       <solution.icon className="w-6 h-6 stroke-[2]" />
                     </div>
                     <CardTitle className="text-xl font-sans font-bold text-[#131428]">{solution.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-6 pt-0">
-                    <p className="text-slate-500 text-sm md:text-base font-sans font-medium leading-relaxed pl-[76px]">
+                  <CardContent className="p-6 pt-0 flex-grow">
+                    <p className="text-slate-500 text-sm md:text-base font-sans font-medium leading-relaxed">
                       {solution.description}
                     </p>
                   </CardContent>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SearchCheck, FileSpreadsheet, Code2, Link as LinkIcon, LineChart, MessageSquare, RefreshCw, Layers, Network, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const tabs = [
   {
@@ -126,8 +127,8 @@ export function Method() {
                     </div>
                   </div>
 
-                  {/* Quick Wins Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-10">
+                  {/* Quick Wins Cards (Hidden on mobile) */}
+                  <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-10">
                     {/* Case 1 */}
                     <div className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-md hover:bg-white/10 transition-all flex flex-col sm:flex-row items-start gap-4 min-h-[180px] lg:min-h-[160px]">
                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-0 shrink-0">
@@ -148,6 +149,15 @@ export function Method() {
                         <p className="text-blue-100/80 text-sm font-medium">Pipelines automatizados que eliminan la doble captura entre distintos sistemas operativos de tu empresa.</p>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Mobile Only: Ver más button */}
+                  <div className="md:hidden w-full flex justify-center mt-4">
+                    <Link href="/servicios/auditoria" className="w-full">
+                      <Button className="w-full bg-[#0F62AC] hover:bg-[#0A4B85] text-white font-bold h-14 rounded-2xl">
+                        Ver detalles completos
+                      </Button>
+                    </Link>
                   </div>
                 </motion.div>
               )}
@@ -199,8 +209,8 @@ export function Method() {
                     </div>
                   </div>
 
-                  {/* Complementary Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-10">
+                  {/* Complementary Cards (Hidden on mobile) */}
+                  <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-10">
                     {/* Case 1 */}
                     <div className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-md hover:bg-white/10 transition-all flex flex-col sm:flex-row items-start gap-4 min-h-[180px] lg:min-h-[160px]">
                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-0 shrink-0">
@@ -221,6 +231,15 @@ export function Method() {
                         <p className="text-blue-100/80 text-sm font-medium">Manuales operativos claros y actualizados que garantizan la viabilidad técnica antes de escribir una sola línea de código.</p>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Mobile Only: Ver más button */}
+                  <div className="md:hidden w-full flex justify-center mt-4">
+                    <Link href="/servicios/estandarizacion" className="w-full">
+                      <Button className="w-full bg-[#0F62AC] hover:bg-[#0A4B85] text-white font-bold h-14 rounded-2xl">
+                        Ver detalles completos
+                      </Button>
+                    </Link>
                   </div>
                 </motion.div>
               )}
@@ -279,8 +298,8 @@ export function Method() {
                     </div>
                   </div>
 
-                  {/* Complementary Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-10">
+                  {/* Complementary Cards (Hidden on mobile) */}
+                  <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-10">
                     {/* Case 1 */}
                     <div className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-md hover:bg-white/10 transition-all flex flex-col sm:flex-row items-start gap-4 min-h-[180px] lg:min-h-[160px]">
                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-0 shrink-0">
@@ -301,6 +320,15 @@ export function Method() {
                         <p className="text-blue-100/80 text-sm font-medium">Gestión de inventarios, procesos y envíos construida exactamente a la medida, sin pagar licencias genéricas.</p>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Mobile Only: Ver más button */}
+                  <div className="md:hidden w-full flex justify-center mt-4">
+                    <Link href="/servicios/desarrollo" className="w-full">
+                      <Button className="w-full bg-[#0F62AC] hover:bg-[#0A4B85] text-white font-bold h-14 rounded-2xl">
+                        Ver detalles completos
+                      </Button>
+                    </Link>
                   </div>
                 </motion.div>
               )}
