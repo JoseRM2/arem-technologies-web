@@ -23,7 +23,7 @@ export function Hero() {
           className="flex flex-col items-center space-y-10"
         >
           {/* Logo Box */}
-          <div className="w-48 h-48 bg-white rounded-[2rem] flex items-center justify-center shadow-xl mb-4 p-6 overflow-hidden relative z-10">
+          <div className="hidden md:flex w-48 h-48 bg-white rounded-[2rem] items-center justify-center shadow-xl mb-4 p-6 overflow-hidden relative z-10">
             <Image 
               src="/simbolo-v2.png" 
               alt="AREM Technologies Logo" 

@@ -33,7 +33,7 @@ export function Navbar({ hideLinks = false }: { hideLinks?: boolean }) {
         <div className="flex items-center ml-auto">
           {/* Mobile Symbol Logo */}
           <div className="md:hidden">
-            <img src="/icon.png" alt="AREM Logo" className="w-10 h-10 object-contain" />
+            <img src="/icon.png" alt="AREM Logo" className="w-10 h-10 object-cover rounded-[10px] shadow-sm" />
           </div>
 
           {/* Desktop Navigation Links */}
