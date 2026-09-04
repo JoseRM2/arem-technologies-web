@@ -49,22 +49,22 @@ export function Method() {
         <div className="w-full mt-10">
           
           {/* Tab Navigation */}
-          <div className="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-2 md:gap-4 mb-4 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-            {tabs.map((tab) => {
+          <div className="grid grid-cols-2 md:flex md:flex-row pb-2 md:pb-0 gap-2 md:gap-4 mb-4">
+            {tabs.map((tab, index) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   onMouseEnter={() => setActiveTab(tab.id)} // Hover trigger for desktop
-                  className={`flex-1 whitespace-nowrap min-w-[200px] md:min-w-0 snap-center flex items-center justify-center gap-3 py-4 md:py-5 px-6 rounded-[2rem] transition-all duration-300 ${
+                  className={`${index === 0 ? "col-span-2 md:col-auto" : "col-span-1 md:col-auto"} flex-1 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 py-3 md:py-5 px-2 md:px-6 rounded-2xl md:rounded-[2rem] transition-all duration-300 ${
                     isActive 
-                      ? "bg-[#131428] text-white shadow-lg shadow-[#131428]/20 scale-[1.02]" 
+                      ? "bg-[#131428] text-white shadow-lg shadow-[#131428]/20 md:scale-[1.02]" 
                       : "bg-white text-slate-500 hover:bg-slate-100 border border-slate-100"
                   }`}
                 >
                   <tab.icon className={`w-5 h-5 ${isActive ? "text-white" : "text-[#131428]"}`} />
-                  <span className="font-bold text-lg tracking-tight">{tab.title}</span>
+                  <span className="font-bold text-[11px] md:text-lg tracking-tight text-center leading-tight">{tab.title}</span>
                 </button>
               );
             })}
@@ -89,11 +89,11 @@ export function Method() {
                   <div className="flex flex-col lg:flex-row items-center gap-12">
                     <div className="flex-1 text-white z-10 lg:min-h-[350px] flex flex-col justify-center">
 
-                      <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
+                      <h3 className="text-2xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
                         Encuesta Web de <br/>
                         <span>Análisis de Procesos</span>
                       </h3>
-                      <p className="text-slate-300 text-lg font-medium leading-relaxed mb-8">
+                      <p className="text-slate-300 text-base md:text-lg font-medium leading-relaxed mb-8">
                         Diagnosticamos tu empresa con tecnología. Esta herramienta analiza la percepción interna y externa de cada área o departamento para descubrir con exactitud dónde se encuentran los <strong className="text-white">cuellos de botella, retrabajos y fricciones operativas</strong>.
                       </p>
                       <ul className="space-y-4">
@@ -174,8 +174,8 @@ export function Method() {
                   <div className="flex flex-col lg:flex-row items-center gap-12">
                     <div className="flex-1 text-white z-10 lg:min-h-[350px] flex flex-col justify-center">
 
-                      <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Orden antes del código</h3>
-                      <p className="text-blue-100 text-lg font-medium leading-relaxed mb-6">
+                      <h3 className="text-2xl md:text-4xl font-bold mb-6 tracking-tight">Orden antes del código</h3>
+                      <p className="text-blue-100 text-base md:text-lg font-medium leading-relaxed mb-6">
                         Mapeamos cada proceso paso a paso, creando manuales operativos claros. Sin estandarización, la automatización solo acelera el caos corporativo.
                       </p>
                       <ul className="space-y-4">
@@ -256,11 +256,11 @@ export function Method() {
                   <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
                     <div className="flex-1 text-white z-10 lg:min-h-[350px] flex flex-col justify-center">
 
-                      <h3 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
+                      <h3 className="text-2xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
                         Plataforma de <br/>
                         <span>Manejo de Personal</span>
                       </h3>
-                      <p className="text-slate-300 text-lg font-medium leading-relaxed mb-8">
+                      <p className="text-slate-300 text-base md:text-lg font-medium leading-relaxed mb-8">
                         Desarrollamos sistemas centralizados que se adaptan a la realidad de tu operación. Esta plataforma corporativa automatiza el <strong className="text-white">control de asistencia mediante geocercas, gestión de solicitudes y comunicación interna</strong>.
                       </p>
                       <ul className="space-y-4">

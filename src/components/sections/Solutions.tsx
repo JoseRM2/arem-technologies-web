@@ -57,7 +57,7 @@ export function Solutions() {
             </ul>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full pb-8 md:pb-0 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {solutions.map((solution, index) => (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export function Solutions() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 key={index}
-                className="h-full"
+                className="min-w-[280px] w-[85vw] md:w-auto md:min-w-0 snap-center h-full"
               >
                 <Card className="bg-slate-50/70 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 rounded-[2rem] p-2 h-full flex flex-col">
                   <CardHeader className="flex flex-col items-start gap-4 p-6 pb-3">
