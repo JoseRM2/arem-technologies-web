@@ -30,16 +30,22 @@ export function Navbar({ hideLinks = false }: { hideLinks?: boolean }) {
           <span className={`font-bold text-[8px] leading-[1] tracking-[0.25em] uppercase ${scrolled ? "text-slate-600" : "text-slate-300"} ml-[2px] mt-[1px]`}>Technologies</span>
         </Link>
 
-        {!hideLinks && (
-          <div className="flex items-center gap-8 ml-auto">
-            <nav className="hidden md:flex items-center gap-8">
-              <a href="#metodo" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Método</a>
-              <a href="#soluciones" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Soluciones</a>
-              <a href="#valores" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Valores</a>
-              <a href="#contacto" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Contacto</a>
-            </nav>
+        <div className="flex items-center ml-auto">
+          {/* Mobile Symbol Logo */}
+          <div className="md:hidden">
+            <img src="/icon.png" alt="AREM Logo" className="w-10 h-10 object-contain" />
           </div>
-        )}
+
+          {/* Desktop Navigation Links */}
+          {!hideLinks && (
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="/#metodo" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Método</a>
+              <a href="/#soluciones" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Soluciones</a>
+              <a href="/#valores" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Valores</a>
+              <a href="/#contacto" className={`text-sm font-semibold transition-colors ${scrolled ? "text-slate-600 hover:text-[#0F62AC]" : "text-slate-300 hover:text-white"}`}>Contacto</a>
+            </nav>
+          )}
+        </div>
       </div>
     </motion.header>
   );
