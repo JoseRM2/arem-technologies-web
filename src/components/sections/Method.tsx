@@ -48,7 +48,7 @@ export function Method() {
         <div className="w-full mt-10">
           
           {/* Tab Navigation */}
-          <div className="flex flex-col md:flex-row gap-2 md:gap-4 mb-4">
+          <div className="flex overflow-x-auto md:overflow-visible pb-2 md:pb-0 gap-2 md:gap-4 mb-4 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -56,7 +56,7 @@ export function Method() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   onMouseEnter={() => setActiveTab(tab.id)} // Hover trigger for desktop
-                  className={`flex-1 flex items-center justify-center gap-3 py-5 px-6 rounded-[2rem] transition-all duration-300 ${
+                  className={`flex-1 whitespace-nowrap min-w-[200px] md:min-w-0 snap-center flex items-center justify-center gap-3 py-4 md:py-5 px-6 rounded-[2rem] transition-all duration-300 ${
                     isActive 
                       ? "bg-[#131428] text-white shadow-lg shadow-[#131428]/20 scale-[1.02]" 
                       : "bg-white text-slate-500 hover:bg-slate-100 border border-slate-100"
@@ -83,7 +83,7 @@ export function Method() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="p-8 md:p-16 w-full flex flex-col justify-between gap-16 min-h-[1100px] lg:min-h-[750px]"
+                  className="p-8 md:p-16 w-full flex flex-col justify-between gap-16 lg:min-h-[750px]"
                 >
                   <div className="flex flex-col lg:flex-row items-center gap-12">
                     <div className="flex-1 text-white z-10 lg:min-h-[350px] flex flex-col justify-center">
@@ -159,7 +159,7 @@ export function Method() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="p-8 md:p-16 w-full flex flex-col justify-between gap-16 min-h-[1100px] lg:min-h-[750px]"
+                  className="p-8 md:p-16 w-full flex flex-col justify-between gap-16 lg:min-h-[750px]"
                 >
                   <div className="flex flex-col lg:flex-row items-center gap-12">
                     <div className="flex-1 text-white z-10 lg:min-h-[350px] flex flex-col justify-center">
@@ -232,7 +232,7 @@ export function Method() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="p-8 md:p-16 w-full flex flex-col justify-between gap-16 min-h-[1100px] lg:min-h-[750px]"
+                  className="p-8 md:p-16 w-full flex flex-col justify-between gap-16 lg:min-h-[750px]"
                 >
                   <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
                     <div className="flex-1 text-white z-10 lg:min-h-[350px] flex flex-col justify-center">
